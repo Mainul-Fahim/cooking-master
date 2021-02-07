@@ -1,0 +1,58 @@
+body{
+
+    background-color: antiquewhite;
+
+}
+
+.food{
+
+    border: 1px solid green;
+    border-radius: 20px;
+    padding: 20px;
+
+
+}
+.food-header{
+
+    font-size: 45;
+    color: indigo;
+    text-align: center;
+    width: 300px;
+
+
+}
+#food-name{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    
+    
+}
+
+#meal-detail{
+
+    border: 1px solid green;
+    border-radius: 20px;
+    padding: 20px;
+    width: 400px;
+    margin-left: 35%;
+    margin-top: 5%;
+
+
+}
+
+#food-name img{
+
+    width: 300px;
+    height: 200px;
+
+
+}
+
+#meal-detail img{
+
+    width: 300px;
+    height: 200px;
+
+
+}
