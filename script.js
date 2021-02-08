@@ -18,21 +18,27 @@ function getMeal(mealInput) {
             console.log(data);
             const foodNameDiv = document.getElementById("food-name");
 
+            foodNameDiv.innerHTML = '';
+            if (mealInput == '')
+                return alert("Please Enter a valid meal");
 
             data.meals.forEach(element => {
                 //console.log(element.strCategory);
                 const foodDiv = document.createElement("div");
                 foodDiv.className = "food"
                 //if(mealInput==element.strCategory){
+
                 const foodInfo = `
                 
                 <h3 class="food-header">${element.strMeal}</h3>
-                <img src="${element.strMealThumb}">
+                <img onclick="displayMealDetail('${element.strMeal}')" src="${element.strMealThumb}">
                 <br>
-                <button onclick="displayMealDetail('${element.strMeal}')">Detail</button>
+                
             `
                 foodDiv.innerHTML = foodInfo;
                 foodNameDiv.appendChild(foodDiv);
+
+
                 //}
             });
 
@@ -60,10 +66,11 @@ const displayMealDetail = meal => {
 const renderMealInfo = meal => {
     console.log(meal);
     const mealDiv = document.getElementById("meal-detail");
+    mealDiv.style.display = "block";
     mealDiv.innerHTML = `
 
         <img src="${meal.strMealThumb}">
-        <h1>${meal.strMeal}</h1>
+        <h3>${meal.strMeal}</h3>
         <h5>Ingredients</h5>
         <ul>
         <li>${meal.strIngredient1}</li>
